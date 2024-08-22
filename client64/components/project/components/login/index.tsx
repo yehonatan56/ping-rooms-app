@@ -1,8 +1,8 @@
-import { ThemedView } from "../../ThemedView";
+import { ThemedView } from "../../../buildIn/ThemedView";
 import { Pressable, Text, View } from "react-native";
 import React from "react";
-import { loginStyles } from "@/components/project/login/styles";
-import { stateApp } from "@/components/project/app/types";
+import { loginStyles } from "@/components/project/components/login/styles";
+import { stateApp } from "@/components/project/components/app/types";
 
 export default function LoginScreen({
   setMode,

@@ -10,7 +10,7 @@ io.on("connection", (socket) => {
   console.log("Socket connected: " + socket.id);
   socket.on("ping", (msg) => {
     console.log(msg);
-    io.emit("pimg", msg);
+    io.sockets.emit("pimg", msg);
   });
 });
 

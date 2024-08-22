@@ -1,5 +1,5 @@
-import ParallaxScrollView from "@/components/ParallaxScrollView";
-import App from "@/components/project/app/app";
+import ParallaxScrollView from "@/components/buildIn/ParallaxScrollView";
+import App from "@/components/project/components/app/app";
 export default function HomeScreen() {
   return (
     <ParallaxScrollView
