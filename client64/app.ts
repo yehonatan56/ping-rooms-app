@@ -8,15 +8,12 @@ const io = socket(server);
 
 io.on("connection", (socket) => {
   console.log("Socket connected: " + socket.id);
-  socket.on("ping", (m) => {
-    io.sockets.emit("ping", { message: "ping" });
+  socket.on("ping", (msg) => {
+    console.log(msg);
+    io.sockets.emit("pimg", msg);
   });
 });
 
-app.get("/", (req, res) => {
-  res.send("Server is running");
-});
-
 server.listen(port, () => {
-  console.log(`Server is runningku on port ${port}`);
+  console.log(`Server is running on port ${port}`);
 });

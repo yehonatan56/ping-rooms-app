@@ -3,7 +3,12 @@ import { Socket, io } from "socket.io-client";
 
 let socket: Socket<DefaultEventsMap, DefaultEventsMap> | null = null;
 const socketLogic = (pPing: () => void) => {
-  if (socket === null) socket = io("http://localhost:3000");
+  fetch("http://10.100.102.19:3000")
+    .then((res) => res.text())
+    .then((data) => {
+      console.log(data);
+    });
+  if (socket === null) socket = io("http://10.100.102.19:3000");
   socket.on("connection", () => {
     console.log("connected");
   });
@@ -15,6 +20,7 @@ const socketLogic = (pPing: () => void) => {
 const ping = () => {
   console.log("pingsss");
   // @ts-ignore
-  socket.emit("ping");
+  socket.emit("ping", { message: "ping" });
 };
+// @ts-ignore
 export { socketLogic, ping };
